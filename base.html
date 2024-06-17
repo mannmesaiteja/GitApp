@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP4 to GIF Converter</title>
+    <link rel="stylesheet" href="static/base.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MP4 video to GIF converter</h1>
+        <div class="form">
+            <form action="generate" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="file">Choose, paste, or drag and drop a file here:</label>
+                    <input type="file" id="videoip" name="file" accept="video/*">
+                </div>
+                <div class="video">
+                    <video id="videoplayer" heigh="300" width="300" style="none;" controls>
+                        we are going to see video as soon as when we upload it
+                    </video>
+                </div>
+                <div class="form-group">
+                    <label for="url">Or enter direct video URL:</label>
+                    <input type="url" id="url" name="url" placeholder="https://">
+                </div>
+                <div class="form-group">
+                    <label for="start">Start Time (in seconds):</label>
+                    <input type="number" id="start" name="start" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="end">End Time (in seconds):</label>
+                    <input type="number" id="end" name="end" min="0" placeholder="10">
+                </div>
+                <p>MP4, WebM, AVI, MPEG, FLV, OGG, MOV, 3GP and other video files<br>Max file size: 200MB</p>
+                <button type="submit" class="btn">Upload video!</button>
+            </form>
+        </div>
+        <footer>
+            <p>All uploaded files are automatically deleted 1 hour after upload:&copy2024</p>
+        </footer>
+    </div>
+    <script src="static/base.js">
+       
+    </script>
+</body>
+</html>
